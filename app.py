@@ -2,7 +2,12 @@ import html
 import re
 from typing import Optional
 
+import os
 import streamlit as st
+
+for key in ("GOOGLE_API_KEY", "TAVILY_API_KEY"):
+    if key in st.secrets:
+        os.environ[key] = st.secrets[key]
 
 from pipeline import run_reserach_pipeline
 

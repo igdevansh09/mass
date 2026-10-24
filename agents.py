@@ -9,10 +9,17 @@ import os
 load_dotenv()
 
 
+google_api_key = os.getenv("GOOGLE_API_KEY")
+
+if not google_api_key:
+    raise ValueError(
+        "GOOGLE_API_KEY is missing. Configure it in Streamlit Cloud Secrets."
+    )
+
 llm = ChatGoogleGenerativeAI(
     model="gemini-3.8-flash",
     temperature=0,
-    google_api_key=os.getenv("GOOGLE_API_KEY"),
+    google_api_key=google_api_key,
 )
 
 def build_search_agent():
