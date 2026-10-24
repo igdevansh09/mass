@@ -5,9 +5,12 @@ from typing import Optional
 import os
 import streamlit as st
 
-for key in ("GOOGLE_API_KEY", "TAVILY_API_KEY"):
-    if key in st.secrets:
-        os.environ[key] = st.secrets[key]
+try:
+    os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
+    os.environ["TAVILY_API_KEY"] = st.secrets["TAVILY_API_KEY"]
+except KeyError as exc:
+    st.error(f"Missing Streamlit secret: {exc.args[0]}")
+    st.stop()
 
 from pipeline import run_reserach_pipeline
 
