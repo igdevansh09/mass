@@ -1,0 +1,39 @@
+
+# Environment configuration
+python-dotenv
+
+# LangChain core and LCEL Runnables
+langchain
+langchain-core
+langchain-community
+langchain-openai
+langchain-google-genai
+
+# Tavily web search tool
+langchain-tavily
+tavily-python
+
+# HTML parsing and web scraping
+beautifulsoup4
+requests
+
+# Optional: HTML parsing backend
+lxml
+
+# Data validation and structured outputs
+pydantic
+
+# HTTP client
+httpx
+
+# Logging and retry utilities
+tenacity
+
+# Type annotations for Python
+typing-extensions
+
+#for better print
+rich
+
+# Streamlit research interface
+streamlit
