@@ -5,6 +5,13 @@ from typing import Optional
 import os
 import streamlit as st
 
+st.set_page_config(
+    page_title="MASS | Research Studio",
+    page_icon="✳",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
 try:
     os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
     os.environ["TAVILY_API_KEY"] = st.secrets["TAVILY_API_KEY"]
